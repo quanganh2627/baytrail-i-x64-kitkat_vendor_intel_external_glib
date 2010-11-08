@@ -120,6 +120,8 @@ GLIB_VAR guint64   (*g_thread_gettime) (void);
  */
 void    g_thread_init   (GThreadFunctions       *vtable);
 
+void    g_thread_deinit(void);
+
 /* Errorcheck mutexes. If you define G_ERRORCHECK_MUTEXES, then all
  * mutexes will check for re-locking and re-unlocking */
 

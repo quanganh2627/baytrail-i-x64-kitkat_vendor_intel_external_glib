@@ -131,6 +131,12 @@ G_LOCK_DEFINE_STATIC (g_thread);
 void
 g_thread_init_glib (void)
 {
+  g_once_mutex = NULL;
+  g_once_cond = NULL;
+  g_thread_specific_private = NULL;
+  g_thread_all_threads = NULL;
+  g_thread_free_indeces = NULL;
+
   /* We let the main thread (the one that calls g_thread_init) inherit
    * the static_private data set before calling g_thread_init
    */
@@ -722,7 +728,7 @@ g_thread_self (void)
       if (g_thread_supported ())
 	G_THREAD_UF (thread_self, (&thread->system_thread));
 
-      g_private_set (g_thread_specific_private, thread);
+      //g_private_set (g_thread_specific_private, thread);
 
       G_LOCK (g_thread);
       thread->next = g_thread_all_threads;
@@ -925,6 +931,11 @@ g_thread_foreach (GFunc    thread_func,
         thread_func (thread, user_data);
       g_slist_free_1 (node);
     }
+}
+
+void *g_get_threadkey_glib(void)
+{
+    return (void *)g_thread_specific_private;
 }
 
 #define __G_THREAD_C__

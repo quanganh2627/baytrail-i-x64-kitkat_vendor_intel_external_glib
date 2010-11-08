@@ -355,6 +355,15 @@ g_thread_init (GThreadFunctions* init)
   g_thread_init_glib ();
 }
 
+void
+g_thread_deinit(void)
+{
+  g_private_delete_posix_impl((GPrivate *)g_get_threadkey_glib());
+  g_private_delete_posix_impl((GPrivate *)g_get_slicekey_glib());
+  g_private_delete_posix_impl((GPrivate *)g_get_logdepthkey_glib());
+  return;
+}
+
 #else /* !G_THREADS_ENABLED */
 
 void

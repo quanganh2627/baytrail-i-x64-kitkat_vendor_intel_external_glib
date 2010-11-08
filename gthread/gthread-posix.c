@@ -472,3 +472,16 @@ static GThreadFunctions g_thread_functions_for_glib_use_default =
   g_thread_self_posix_impl,
   g_thread_equal_posix_impl
 };
+
+static void
+g_private_delete_posix_impl (GPrivate *private_key)
+{
+  int ret;
+  if(!private_key)
+      return;
+  ret = pthread_key_delete (*((pthread_key_t *)private_key));
+  //if(ret != 0)
+  //    LOGE("pthread_key_detele failed, ret = %d", ret);
+
+  return;
+}

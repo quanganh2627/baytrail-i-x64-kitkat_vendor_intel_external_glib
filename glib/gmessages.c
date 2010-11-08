@@ -1093,5 +1093,10 @@ _g_debug_init (void)
     }
 }
 
+void *g_get_logdepthkey_glib(void)
+{
+    return (void *)g_log_depth;
+}
+
 #define __G_MESSAGES_C__
 #include "galiasdef.c"

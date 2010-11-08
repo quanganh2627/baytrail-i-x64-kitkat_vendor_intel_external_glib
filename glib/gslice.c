@@ -1441,5 +1441,10 @@ g_slice_debug_tree_statistics (void)
 #endif /* G_ENABLE_DEBUG */
 }
 
+void *g_get_slicekey_glib(void)
+{
+    return (void *)private_thread_memory;
+}
+
 #define __G_SLICE_C__
 #include "galiasdef.c"
