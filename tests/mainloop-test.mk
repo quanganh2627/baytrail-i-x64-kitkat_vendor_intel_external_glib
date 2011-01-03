@@ -13,6 +13,7 @@ LOCAL_C_INCLUDES := 		\
 	$(GLIB_TOP)/android	\
 	$(GLIB_TOP)/glib
 
-LOCAL_MODULE:= mainloop-test
+LOCAL_MODULE := mainloop-test
+LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_EXECUTABLE)

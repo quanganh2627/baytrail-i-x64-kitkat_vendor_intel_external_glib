@@ -15,6 +15,7 @@ LOCAL_C_INCLUDES := \
     $(base)/android         \
     $(base)/glib
 
-LOCAL_MODULE:= array-test
+LOCAL_MODULE := array-test
+LOCAL_MODULE_TAGS := optional
 
 include $(BUILD_EXECUTABLE)

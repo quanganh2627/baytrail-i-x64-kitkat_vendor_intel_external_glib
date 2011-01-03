@@ -9,6 +9,7 @@ LOCAL_SHARED_LIBRARIES := 	\
     libdl
 
 LOCAL_MODULE:= libgmodule-2.0
+LOCAL_MODULE_TAGS := optional
 
 LOCAL_C_INCLUDES := 		\
 	$(GLIB_TOP)		\

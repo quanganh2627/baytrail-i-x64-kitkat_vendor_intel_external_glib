@@ -58,6 +58,7 @@ LOCAL_SRC_FILES:= \
     gspawn.c
 
 LOCAL_MODULE:= libglib-2.0
+LOCAL_MODULE_TAGS := optional
 
 LOCAL_C_INCLUDES := 			\
 	$(GLIB_TOP)			\
