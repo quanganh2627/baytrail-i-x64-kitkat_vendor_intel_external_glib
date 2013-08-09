@@ -67,6 +67,12 @@ LOCAL_C_INCLUDES := 			\
 	$(LOCAL_PATH)/gnulib            \
 	$(LOCAL_PATH)/pcre
 
+LOCAL_EXPORT_C_INCLUDE_DIRS := \
+        $(GLIB_TOP) \
+        $(LOCAL_PATH) \
+        $(GLIB_TOP)/android/
+
+
 # ./glib private macros, copy from Makefile.am
 LOCAL_CFLAGS := \
     -DLIBDIR=\"$(libdir)\"          \
